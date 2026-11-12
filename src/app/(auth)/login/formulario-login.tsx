@@ -20,9 +20,7 @@ export function FormularioLogin() {
   const erroSenha = estado.erros?.senha?.[0];
 
   return (
-    // key: o React limpa o formulário depois da action; assim o e-mail
-    // digitado continua na tela quando a senha está errada.
-    <form key={JSON.stringify(valores)} action={action} className="space-y-4" noValidate>
+    <form action={action} className="space-y-4" noValidate suppressHydrationWarning>
       {/* Campo E-mail */}
       <div className="space-y-1.5">
         <Label htmlFor="email" className="text-sm font-medium text-foreground">
@@ -34,6 +32,7 @@ export function FormularioLogin() {
           type="email"
           autoComplete="email"
           required
+          suppressHydrationWarning
           defaultValue={valores.email}
           placeholder="seu@email.com"
           aria-invalid={Boolean(erroEmail)}
@@ -63,6 +62,7 @@ export function FormularioLogin() {
             type={mostrarSenha ? "text" : "password"}
             autoComplete="current-password"
             required
+            suppressHydrationWarning
             placeholder="Digite sua senha"
             aria-invalid={Boolean(erroSenha)}
             aria-describedby={erroSenha ? "senha-erro" : undefined}

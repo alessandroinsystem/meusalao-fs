@@ -1,8 +1,0 @@
-{
-  "name": "MeuSalão",
-  "description": "Descubra e agende serviços de beleza perto de você",
-  "permissions": [],
-  "capabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
-}

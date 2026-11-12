@@ -8,6 +8,7 @@ const ROTAS_PRIVADAS = ["/inicio", "/salao", "/saloes", "/perfil", "/agendamento
  * importar Prisma nem bcrypt — por isso os providers ficam em `auth.ts`.
  */
 export const authConfig = {
+  secret: process.env.AUTH_SECRET || "meusalao-secret-dev-fallback-key-32chars-minimum-token-string",
   session: { strategy: "jwt" },
   pages: { signIn: "/login" },
   providers: [],

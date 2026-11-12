@@ -12,6 +12,7 @@ export const googleHabilitado = Boolean(process.env.AUTH_GOOGLE_ID && process.en
 
 export const { handlers, auth, signIn, signOut, unstable_update: atualizarSessao } = NextAuth({
   ...authConfig,
+  secret: process.env.AUTH_SECRET || "meusalao-secret-dev-fallback-key-32chars-minimum-token-string",
   providers: [
     Credentials({
       credentials: { email: {}, senha: {} },
